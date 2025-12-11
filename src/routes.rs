@@ -1,7 +1,7 @@
-use actix_web::{HttpResponse, Responder, get, web};
+use actix_web::{HttpResponse, Responder, get, post, web};
 use sqlx::PgPool;
 
-use crate::{errors::CustomErrors, models::UserAddReq};
+use crate::{errors::CustomErrors, models::{UserAdd, UserAddReq}, utils::hashing_password};
 
 #[get("/index")]
 async fn index()->impl Responder{
@@ -16,4 +16,5 @@ async fn get_users(pool:web::Data<PgPool>)->Result<impl Responder,CustomErrors>{
     }
     Ok(HttpResponse::Ok().json(rows))
 }
+
 
