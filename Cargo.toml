@@ -5,5 +5,8 @@ edition = "2024"
 
 [dependencies]
 actix-web = "4.12.1"
+anyhow = "1.0.100"
 argon2 = "0.5.3"
+serde = "1.0.228"
 sqlx = { version = "0.8.6", features = ["postgres"] }
+thiserror = "2.0.17"
