@@ -2,6 +2,7 @@ mod db;
 mod errors;
 mod routes;
 mod models;
+mod utils;
 
 use actix_web::{App, HttpServer, web};
 use crate::{db::get_db, routes::index};
