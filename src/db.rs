@@ -2,7 +2,7 @@ use std::{env, time::Duration};
 
 use sqlx::{PgPool, postgres::PgPoolOptions};
 
-use crate::errors::CustomErrors;
+use crate::utils::errors::CustomErrors;
 
 pub async fn get_db()->Result<PgPool,CustomErrors>{
     let url = env::var("DATABASE_URL").map_err(|_|CustomErrors::DbUrlNotFound)?;

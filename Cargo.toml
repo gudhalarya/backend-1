@@ -7,6 +7,8 @@ edition = "2024"
 actix-web = "4.12.1"
 anyhow = "1.0.100"
 argon2 = "0.5.3"
+chrono = { version = "0.4.42", features = ["serde"] }
 serde = "1.0.228"
-sqlx = { version = "0.8.6", features = ["postgres"] }
+sqlx = { version = "0.7", features = ["postgres", "runtime-tokio", "chrono"] }
+
 thiserror = "2.0.17"

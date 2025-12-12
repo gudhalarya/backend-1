@@ -1,7 +1,7 @@
 use actix_web::{HttpResponse, Responder, get, post, web};
 use sqlx::PgPool;
 
-use crate::{errors::CustomErrors, models::{UserAdd, UserAddReq}, utils::{hashing_password, verify_password}};
+use crate::{utils::errors::CustomErrors, models::{UserAdd, UserAddReq}, utils::{hashing_password, verify_password}};
 
 #[get("/index")]
 async fn index()->impl Responder{
